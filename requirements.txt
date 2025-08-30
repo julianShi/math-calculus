@@ -1,4 +1,13 @@
-matplotlib
-notebook
-nympy
-sympy
+# Core dependencies for calculus notebooks
+sympy>=1.12
+jupyter>=1.0.0
+notebook>=7.0.0
+
+# Scientific computing and visualization
+numpy>=1.24.0
+matplotlib>=3.7.0
+scipy>=1.11.0
+
+# Additional utilities
+ipywidgets>=8.0.0
+plotly>=5.15.0
