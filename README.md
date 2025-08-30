@@ -130,18 +130,6 @@ This repository aims to help learners:
 - Bridge the gap between theory and practical applications
 - Develop proficiency in mathematical programming with Python
 
-## 📊 Current Status
-
-- ✅ **Chapter 12**: Infinite Series (Section 7: Fourier Series implemented)
-- 🚧 **Chapters 1-11**: Planned for future development
-- 🚧 **Additional sections**: Chapter 12 sections 1-6, 8 planned
-
-## 🌐 Language Support
-
-- **Theoretical Content**: Chinese (中文)
-- **Code Documentation**: English
-- **Comments**: Bilingual support encouraged
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
