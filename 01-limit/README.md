@@ -8,19 +8,19 @@
 一个值得研究的不连续函数
 $\sin(1/x)$
 可以在 https://www.desmos.com/calculator 上面画出其形状。
-可见其在 $x=0$ 处不连续。
+可见其在 $x=0$ 处不连续，叫做振荡间断点。
 
 ### 值得背诵的几个重要极限
 
-$\displaystyle \lim _{x\rightarrow 0}\frac{\sin x}{x} =1$
+$\lim _{x\rightarrow 0}\frac{\sin x}{x} =1$
 
-$\displaystyle \lim _{x\rightarrow \infty }( 1+1/x)^{x} =e$
+$\lim _{x\rightarrow \infty }( 1+1/x)^{x} =e$
 
 
 ### 洛必达 L'hopital 法则
 
-对于可导的函数 $\displaystyle f( x) ,g( x)$，若 $\displaystyle f( x_{0}) =g( x_{0}) =0$，则有
+对于可导的函数 $f( x) ,g( x)$，若 $f( x_{0}) =g( x_{0}) =0$，则有
 
-$\displaystyle \lim _{x\rightarrow x_{0}}\frac{f( x)}{g( x)} =\lim _{x\rightarrow x_{0}}\frac{f'( x)}{g'( x)}$
+$\lim _{x\rightarrow x_{0}}\frac{f( x)}{g( x)} =\lim _{x\rightarrow x_{0}}\frac{f'( x)}{g'( x)}$
 
 这个法则可以在介绍了幂级数之后，简单证明。按下不表。
