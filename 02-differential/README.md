@@ -1,0 +1,41 @@
+## 函数的求导法则
+
+**函数的和差积商**
+
+如果函数 $\displaystyle u( x) ,\ v( x)$ 在 x 点都有导数，那么它们的和差积商在 x 点也有导数
+
+$\displaystyle  \begin{array}{{>{\displaystyle}l}}
+u( x) +v( x) =u'( x) +v'( x)\\
+u( x) v( x) =u'( x) v( x) +u( x) v'( x)\\
+\left(\frac{u( x)}{v( x)}\right) '=\frac{u'( x) v( x) -u( x) v'( x)}{v^{2}( x)} ,v( x) \neq 0
+\end{array}$
+
+**反函数**
+
+$\displaystyle \left[ f^{-1}( x)\right] '=\frac{1}{f'( y)}$
+
+**复合函数**
+
+对于函数 $\displaystyle z( y) ,y( x)$, 若他们导数在 x 点存在，则
+
+$\displaystyle z'( x) =z'( y) y'( x)$
+
+
+
+## 高阶导数
+
+$\displaystyle [\sin x]^{( n)} =\sin( x+\pi n/2)$
+
+
+
+## 隐函数的导数
+
+假设存在
+
+$\displaystyle x( t) ,y( t)$
+
+且他们的导数存在，则
+
+$\displaystyle \frac{dy}{dx} =\frac{dy/dt}{dx/dt} =\frac{y'( t)}{x'( t)}$
+
+$\displaystyle \frac{d^{2} y}{dx^{2}} =\frac{d}{dx}\frac{dy}{dx} =\frac{d}{dt}\left(\frac{y'( t)}{x'( t)}\right)\frac{dt}{dx} =\frac{y''( t) x'( t) -y'( t) x''( t)}{x^{\prime 3}( t)}$
