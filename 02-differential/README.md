@@ -61,12 +61,15 @@ $$
 ## 弧长微元
 
 ### 直角坐标表示
+
 $$
 ds = \sqrt{dx^2+dy^2} = \sqrt{dx^2+y'^2dx^2} = \sqrt{1+y'^2} dx
 $$
+
 ### 极坐标表示
 
 在极坐标中
+
 $$
 x=r(\theta)\cos(\theta), y=r(\theta)\sin(\theta)
 $$
@@ -74,11 +77,15 @@ $$
 $$
 dx=r'd\theta\cos(\theta) - r\sin(\theta)d\theta, dy=r'd\theta\sin(\theta) + r\cos(\theta)d\theta
 $$
+
 所以
+
 $$
 ds=\sqrt{( r'd\theta \cos (\theta )-r\sin (\theta )d\theta )^{2} +( r'd\theta \sin (\theta )+r\cos (\theta )d\theta )^{2}}
 $$
+
 化简
+
 $$
 ds=\sqrt{r^{2} +r^{\prime 2}} d\theta
 $$
