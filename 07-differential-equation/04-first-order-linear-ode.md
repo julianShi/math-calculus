@@ -14,7 +14,7 @@ $$
 齐次方程的解是
 
 $$
-y=C\exp\left( -\int p(x)dx\right)
+y=C e^{-\int p dx}
 $$
 
 请读者自行验证。
@@ -75,3 +75,26 @@ $$
 
 建议读者尝试自己重复一遍推导过程，而不是死记硬背“常数变易法”。
 
+### 通解特解
+
+我们注意到，上式可以展开成
+$$
+y = e^{-\int p dx} \int q e^{\int p dx} dx + C_2  e^{-\int p dx}
+$$
+其中，加号左侧叫做**特解** particular solution，加号右侧是其次方程的**通解** general solution。这个叠加性还可以推广到高阶齐次方程。
+
+### 伯努利方程
+
+形如如下，类似于一阶线性微分方程，但是多了 $y^n$ 项的，叫做伯努利方程。因为有解析解，所以拿出来当作联系
+
+$\displaystyle \frac{dy}{dx} +P( x) y=Q( x) y^{n}$
+
+通过如下变量替换，
+
+$\displaystyle z=y^{1-n}$
+
+可将原方程转换成一阶线性方程形式，进而套公式求解。
+
+$\displaystyle \frac{1}{1-n}\frac{dz}{dx} +P( x) z=Q( x)$
+
+请读者自行推导，当作练习。不是考点。
