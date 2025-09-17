@@ -1,14 +1,12 @@
 ## 物理例子
 
-举一个二阶线性方程的例子
+举一个二阶线性方程的例子，用来显示高阶线性方程的作用。
 
 串联电路的振荡方程
 
-$\displaystyle E-L\frac{di}{dt} -\frac{q}{C} -Ri=E_{0}\sin \omega t$
+$\displaystyle E-L\frac{di}{dt} -\frac{1}{C}\int idt -Ri=E_{0}\sin \omega t$
 
-其中，待求电流 $\displaystyle i( t)$ 是时间的函数
-
-给定初值 $\displaystyle i( 0)$，能够唯一地确定 $\displaystyle i( t)$
+其中，待求电流 $\displaystyle i( t)$ 是时间的函数。
 
 ## 二阶齐次线性方程
 
@@ -20,7 +18,7 @@ $\displaystyle y''+P( x) y'+Q( x) y=0$
 
 $\displaystyle y( x) =C_{1} y_{1}( x) +C_{2} y_{2}( x)$
 
-也是方程的解。
+也是方程的解，其中 $C_1,C_2$ 是任意常数。
 
 证明：把“解”代入原方程左侧
 
@@ -30,7 +28,7 @@ $\displaystyle [ C_{1} y_{1} ''( x) +C_{2} y_{2} ''( x)] +P( x)[ C_{1} y_{1} '( 
 
 $\displaystyle C_{1}( y_{1} ''+P( x) y_{1} '+Q( x) y_{1}) +C_{2}( y_{2} ''+P( x) y_{2} '+Q( x) y_{2}) =0$
 
-证t毕
+证毕
 
 ## 线性无关函数
 

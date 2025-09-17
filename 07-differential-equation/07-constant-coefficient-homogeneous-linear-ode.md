@@ -45,6 +45,8 @@ z
 
 $\boldsymbol{y} '=\boldsymbol{Ay}$
 
+### 特征方程无重根
+
 若
 
 $p^2-4q\neq 0$
@@ -73,11 +75,95 @@ $\mathbf{y} =\mathbf{P}^{-1}\left( C_{i} e^{\lambda _{i} x}\right)=\mathbf{P}^{-
 
 $\mathbf{D} =\mathbf{P}^{-1}\mathbf{C}$
 
-即得到
+即得到通解
 
 $y_{i} =\sum _{j} D_{j} e^{\lambda _{j} x}$
 
+### 特征方程有重根
+
+对于 $p^2-4q = 0$， 进而特征根 $\lambda _{1} =\lambda _{2} =\lambda =-p/2$，导致 $\mathbf{A}$ 不可对角化的情况，可以这么处理。
+
+这个时候，方程可以重写为
+
+$y''+py'+\frac{p^2}{4}y=0$
+
+用特征根表示更好
+
+$y''-2\lambda y'+\lambda^2 y=0$
+
+类似于因式分解，我们得到
+
+$\left( y'-\lambda y\right) '-\lambda\left( y' -\lambda y\right) =0$
+
+的美妙形式。这个形式不是简单拼凑出来的，而是重根固有的性质。接下来定义
+
+$z=y'- \lambda y$
+
+那么得到方程
+
+$z' - \lambda z=0$
+
+这是一阶齐次线性方程，有通解
+
+$z=C_1e^{\lambda x}$
+
+代回到z的定义，得到
+
+$y'-\lambda y = C_1e^{\lambda x}$
+
+这是一阶非齐次线性方程，也有通解
+
+$y =  \left(C_{2} + C_{1} x\right) e^{\lambda x} $
+
+这个方法可以推广到高阶，比如说有3重根的情况。读者可以自行尝试。
 
 
-对于 $p^2-4q = 0$， 导致 $\mathbf{A}$ 不可对角化的情况，请读者尝试证明。
 
+### 特征方程有重根与非重根
+
+拿4阶齐次线性微分方程距离。例如，假设有四个特征值 $\lambda,\lambda,\lambda_1,\lambda_2$， 其中两个 $\lambda$ 是重根。那么可以作如下变量替换，把原高阶方程变成一阶方程组
+
+$\displaystyle z=y' -\lambda _{1} y$
+
+$\displaystyle z_{1} =z' -\lambda _{2} z$
+
+$\displaystyle \zeta _{1} =( z_{1} ' -\lambda z_{1})$
+
+$\displaystyle \zeta _{1} ' -\lambda \zeta _{1} =0$
+
+其对应的矩阵形式是
+
+$\displaystyle \begin{pmatrix}
+y'\\
+z'\\
+z_{1} '\\
+\zeta _{1} '
+\end{pmatrix} =\begin{pmatrix}
+\lambda _{1} & 1 &  & \\
+ & \lambda _{2} & 1 & \\
+ &  & \lambda  & 1\\
+ &  &  & \lambda 
+\end{pmatrix}\begin{pmatrix}
+y\\
+z\\
+z_{1}\\
+\zeta _{1}
+\end{pmatrix}$
+
+根据线性代数知识，这是分块上三角矩阵
+
+$\mathbf{A} =\begin{pmatrix}
+\mathbf{B} & \mathbf{C}\\
+\mathbf{0} & \mathbf{D}
+\end{pmatrix}$
+
+其中，$\mathbf{B}$ 可对角化，$\mathbf{D}$ 不可对角化，$\mathbf{C}$ 可以通过相似变换消去。
+
+可以构造相似变换矩阵 $\mathbf{P}$, 使得
+
+$\mathbf{P}^{-1}\mathbf{A}\mathbf{P} =\begin{pmatrix}
+\mathbf{B} ' & \mathbf{0}\\
+\mathbf{0} & \mathbf{D}
+\end{pmatrix}$
+
+再根据上两节知识，分别求解两部分方程的通解。
