@@ -65,9 +65,9 @@ $(\mathbf{Py})_{i} '=\lambda _{i}(\mathbf{Py})_{i}$
 
 易得到一阶微分方程的通解是
 
-$(\mathbf{Py})_{i} =C_{i} e^{\lambda _{i} x}$
+$(\mathbf{Py})_{i} =c_{i} e^{\lambda _{i} x}$
 
-$\mathbf{y} =\mathbf{P}^{-1}\left( C_{i} e^{\lambda _{i} x}\right)=\mathbf{P}^{-1}\mathbf{C}\left( e^{\lambda _{i} x}\right)$
+$\mathbf{y} =\mathbf{P}^{-1}\left( c_{i} e^{\lambda _{i} x}\right)=\mathbf{P}^{-1}\mathbf{C}\left( e^{\lambda _{i} x}\right)$
 
 其中 $\mathbf{C}$  是对角阵。
 
@@ -121,7 +121,7 @@ $y =  \left(C_{2} + C_{1} x\right) e^{\lambda x} $
 
 ### 特征方程有重根与非重根
 
-拿4阶齐次线性微分方程距离。例如，假设有四个特征值 $\lambda,\lambda,\lambda_1,\lambda_2$， 其中两个 $\lambda$ 是重根。那么可以作如下变量替换，把原高阶方程变成一阶方程组
+拿4阶齐次线性微分方程举例。例如，假设有四个特征值 $\lambda,\lambda,\lambda_1,\lambda_2$， 其中两个 $\lambda$ 是重根。那么可以作如下变量替换，把原高阶方程变成一阶方程组
 
 $\displaystyle z=y' -\lambda _{1} y$
 
@@ -167,3 +167,4 @@ $\mathbf{P}^{-1}\mathbf{A}\mathbf{P} =\begin{pmatrix}
 \end{pmatrix}$
 
 再根据上两节知识，分别求解两部分方程的通解。
+
