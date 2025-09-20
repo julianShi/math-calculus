@@ -8,11 +8,11 @@ $y''+py'+qy=0$
 
 我们来猜测解的形式。因为指数函数 $e^{rx}$ 有比较好的性质，即各阶导数只相差一个常数比例，所以用待定系数法，猜测解的形式。代入后，得到
 
-$\displaystyle \left( e^{rx}\right) ''+p\left( e^{rx}\right) '+q\left( e^{rx}\right) =0$
+$\left( e^{rx}\right) ''+p\left( e^{rx}\right) '+q\left( e^{rx}\right) =0$
 
-$\displaystyle \left( r^{2} +pr+q\right) e^{rx} =0$
+$\left( r^{2} +pr+q\right) e^{rx} =0$
 
-$\displaystyle r^{2} +pr+q=0$
+$r^{2} +pr+q=0$
 
 关于r的特征方程。可知r 有两个解
 
@@ -21,6 +21,55 @@ $\displaystyle r^{2} +pr+q=0$
 | $p^2-4q>0$ | $\frac{-p\pm \sqrt{p^{2} -4q}}{2}$ | $C_{1} e^{r_{1} x} +C_{2} e^{r_{2} x}$  |
 | $p^2-4q=0$ | $-p/2$                             | $C_{1} e^{r_{1} x} +C_{2} xe^{r_{1} x}$ |
 | $p^2-4q<0$ | $\frac{-p\pm i\sqrt{4q-p^{2}}}{2}$ | $C_{1} e^{r_{1} x} +C_{2} e^{r_{2} x}$  |
+
+**符号计算器**
+
+通解
+
+> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator，
+>
+> 把下列 LaTeX 源码贴入输入框中
+>
+> ```latex
+> \frac{d}{dx}\frac{d}{dx}f(x)+p\frac{d}{dx}f(x)+qf(x)
+> ```
+>
+> 选择 "求解微分方程 dsolve"，点击 “计算”按钮，就可以求解出
+> $$
+> f{\left(x \right)} = C_{1} e^{\frac{x \left(- p + \sqrt{p^{2} - 4 q}\right)}{2}} + C_{2} e^{- \frac{x \left(p + \sqrt{p^{2} - 4 q}\right)}{2}}
+> $$
+
+当有重根
+
+> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator，
+>
+> 把下列 LaTeX 源码贴入输入框中
+>
+> ```latex
+> \frac{d}{dx}\frac{d}{dx}f(x)+2p\frac{d}{dx}f(x)+p^2f(x)
+> ```
+>
+> 选择 "求解微分方程 dsolve"，点击 “计算”按钮，就可以求解出
+> $$
+> f{\left(x \right)} = \left(C_{1} + C_{2} x\right) e^{- p x}
+> $$
+
+当有复数根
+
+> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator，
+>
+> 把下列 LaTeX 源码贴入输入框中
+>
+> ```latex
+> \frac{d}{dx}\frac{d}{dx}f(x)+p\frac{d}{dx}f(x)+p^2f(x)
+> ```
+>
+> 选择 "求解微分方程 dsolve"，点击 “计算”按钮，就可以求解出
+> $$
+> f{\left(x \right)} = C_{1} e^{\frac{p x \left(-1 + \sqrt{3} i\right)}{2}} + C_{2} e^{- \frac{p x \left(1 + \sqrt{3} i\right)}{2}}
+> $$
+
+
 
 ### 线性空间法
 
@@ -32,7 +81,7 @@ $z'+pz+qy=0$
 
 写成矩阵形式
 
-$\displaystyle \begin{pmatrix}
+$\begin{pmatrix}
 y'\\
 z'
 \end{pmatrix} =\begin{pmatrix}
@@ -43,7 +92,7 @@ y\\
 z
 \end{pmatrix}$
 
-$\boldsymbol{y} '=\boldsymbol{Ay}$
+$\mathbf{y} '=\mathbf{Ay}$
 
 ### 特征方程无重根
 
@@ -51,13 +100,13 @@ $\boldsymbol{y} '=\boldsymbol{Ay}$
 
 $p^2-4q\neq 0$
 
-可将常系数矩阵 $\boldsymbol{A}$ 对角化，
+可将常系数矩阵 $\mathbf{A}$ 对角化，
 
 $\mathbf{A} = \mathbf{P}^{-1}\mathbf{\Lambda P}$
 
 得到
 
-$\boldsymbol{P}\boldsymbol{y} '=\boldsymbol{\Lambda Py}$
+$\mathbf{P}\mathbf{y} '=\mathbf{\Lambda Py}$
 
 对角化之后，各行线性无关
 
@@ -123,17 +172,17 @@ $y =  \left(C_{2} + C_{1} x\right) e^{\lambda x} $
 
 拿4阶齐次线性微分方程举例。例如，假设有四个特征值 $\lambda,\lambda,\lambda_1,\lambda_2$， 其中两个 $\lambda$ 是重根。那么可以作如下变量替换，把原高阶方程变成一阶方程组
 
-$\displaystyle z=y' -\lambda _{1} y$
+$z=y' -\lambda _{1} y$
 
-$\displaystyle z_{1} =z' -\lambda _{2} z$
+$z_{1} =z' -\lambda _{2} z$
 
-$\displaystyle \zeta _{1} =( z_{1} ' -\lambda z_{1})$
+$\zeta _{1} =( z_{1} ' -\lambda z_{1})$
 
-$\displaystyle \zeta _{1} ' -\lambda \zeta _{1} =0$
+$\zeta _{1} ' -\lambda \zeta _{1} =0$
 
 其对应的矩阵形式是
 
-$\displaystyle \begin{pmatrix}
+$\begin{pmatrix}
 y'\\
 z'\\
 z_{1} '\\
