@@ -35,6 +35,7 @@ $r^{2} +pr+q=0$
 > ```
 >
 > 选择 "求解微分方程 dsolve"，点击 “计算”按钮，就可以求解出
+> 
 > $$
 > f{\left(x \right)} = C_{1} e^{\frac{x \left(- p + \sqrt{p^{2} - 4 q}\right)}{2}} + C_{2} e^{- \frac{x \left(p + \sqrt{p^{2} - 4 q}\right)}{2}}
 > $$
@@ -50,6 +51,7 @@ $r^{2} +pr+q=0$
 > ```
 >
 > 选择 "求解微分方程 dsolve"，点击 “计算”按钮，就可以求解出
+> 
 > $$
 > f{\left(x \right)} = \left(C_{1} + C_{2} x\right) e^{- p x}
 > $$
@@ -65,6 +67,7 @@ $r^{2} +pr+q=0$
 > ```
 >
 > 选择 "求解微分方程 dsolve"，点击 “计算”按钮，就可以求解出
+> 
 > $$
 > f{\left(x \right)} = C_{1} e^{\frac{p x \left(-1 + \sqrt{3} i\right)}{2}} + C_{2} e^{- \frac{p x \left(1 + \sqrt{3} i\right)}{2}}
 > $$
