@@ -131,6 +131,7 @@ $$
 $$
 \mathbf{y} =\mathbf{P}^{-1}\left( c_{i} e^{\lambda _{i} x}\right)=\mathbf{P}^{-1}\mathbf{C}\left( e^{\lambda _{i} x}\right)
 $$
+
 其中 $\mathbf{C}$  是对角阵。
 
 因为 $\mathbf{P}$ 是线性变换，我们只需要改变一下系数的形式。定义
@@ -138,6 +139,7 @@ $$
 $$
 \mathbf{D} =\mathbf{P}^{-1}\mathbf{C}
 $$
+
 即得到通解
 
 $y_{i} =\sum _{j} D_{j} e^{\lambda _{j} x}$
@@ -214,6 +216,7 @@ z_{1}\\
 \zeta _{1}
 \end{pmatrix}
 $$
+
 根据线性代数知识，这是分块上三角矩阵
 
 $$
@@ -222,6 +225,7 @@ $$
 \mathbf{0} & \mathbf{D}
 \end{pmatrix}
 $$
+
 其中，$\mathbf{B}$ 可对角化，$\mathbf{D}$ 不可对角化，$\mathbf{C}$ 可以通过相似变换消去。
 
 可以构造相似变换矩阵 $\mathbf{P}$, 使得
