@@ -81,7 +81,8 @@ $z'+pz+qy=0$
 
 写成矩阵形式
 
-$\begin{pmatrix}
+$$
+\begin{pmatrix}
 y'\\
 z'
 \end{pmatrix} =\begin{pmatrix}
@@ -90,9 +91,12 @@ z'
 \end{pmatrix}\begin{pmatrix}
 y\\
 z
-\end{pmatrix}$
+\end{pmatrix}
+$$
 
-$\mathbf{y} '=\mathbf{Ay}$
+$$
+\mathbf{y} '=\mathbf{Ay}
+$$
 
 ### 特征方程无重根
 
@@ -102,27 +106,39 @@ $p^2-4q\neq 0$
 
 可将常系数矩阵 $\mathbf{A}$ 对角化，
 
-$\mathbf{A} = \mathbf{P}^{-1}\mathbf{\Lambda P}$
+$$
+\mathbf{A} = \mathbf{P}^{-1}\mathbf{\Lambda P}
+$$
 
 得到
 
-$\mathbf{P}\mathbf{y} '=\mathbf{\Lambda Py}$
+$$
+\mathbf{P}\mathbf{y} '=\mathbf{\Lambda Py}
+$$
 
 对角化之后，各行线性无关
 
-$(\mathbf{Py})_{i} '=\lambda _{i}(\mathbf{Py})_{i}$
+$$
+(\mathbf{Py})_{i} '=\lambda _{i}(\mathbf{Py})_{i}
+$
 
 易得到一阶微分方程的通解是
 
-$(\mathbf{Py})_{i} =c_{i} e^{\lambda _{i} x}$
+$$
+(\mathbf{Py})_{i} =c_{i} e^{\lambda _{i} x}
+$$
 
-$\mathbf{y} =\mathbf{P}^{-1}\left( c_{i} e^{\lambda _{i} x}\right)=\mathbf{P}^{-1}\mathbf{C}\left( e^{\lambda _{i} x}\right)$
+$$
+\mathbf{y} =\mathbf{P}^{-1}\left( c_{i} e^{\lambda _{i} x}\right)=\mathbf{P}^{-1}\mathbf{C}\left( e^{\lambda _{i} x}\right)
+$$
 
 其中 $\mathbf{C}$  是对角阵。
 
 因为 $\mathbf{P}$ 是线性变换，我们只需要改变一下系数的形式。定义
 
-$\mathbf{D} =\mathbf{P}^{-1}\mathbf{C}$
+$$
+\mathbf{D} =\mathbf{P}^{-1}\mathbf{C}
+$$
 
 即得到通解
 
@@ -182,7 +198,8 @@ $\zeta _{1} ' -\lambda \zeta _{1} =0$
 
 其对应的矩阵形式是
 
-$\begin{pmatrix}
+$$
+\begin{pmatrix}
 y'\\
 z'\\
 z_{1} '\\
@@ -197,23 +214,28 @@ y\\
 z\\
 z_{1}\\
 \zeta _{1}
-\end{pmatrix}$
+\end{pmatrix}
+$$
 
 根据线性代数知识，这是分块上三角矩阵
 
-$\mathbf{A} =\begin{pmatrix}
+$$
+\mathbf{A} =\begin{pmatrix}
 \mathbf{B} & \mathbf{C}\\
 \mathbf{0} & \mathbf{D}
-\end{pmatrix}$
+\end{pmatrix}
+$$
 
 其中，$\mathbf{B}$ 可对角化，$\mathbf{D}$ 不可对角化，$\mathbf{C}$ 可以通过相似变换消去。
 
 可以构造相似变换矩阵 $\mathbf{P}$, 使得
 
-$\mathbf{P}^{-1}\mathbf{A}\mathbf{P} =\begin{pmatrix}
+$$
+\mathbf{P}^{-1}\mathbf{A}\mathbf{P} =\begin{pmatrix}
 \mathbf{B} ' & \mathbf{0}\\
 \mathbf{0} & \mathbf{D}
-\end{pmatrix}$
+\end{pmatrix}
+$$
 
 再根据上两节知识，分别求解两部分方程的通解。
 
