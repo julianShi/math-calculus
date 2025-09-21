@@ -1,4 +1,5 @@
 对于有非 $y^{(n)}$ 项的高阶常系数非齐次线性微分方程
+
 $$
 y^{( n)} +a_{1} y^{( n-1)} +...+a_{n-1} y^{( 1)} +a_{n} y=f(x)
 $$
@@ -174,47 +175,47 @@ $$
 
 已知常系数线性微分方程的特征方程有特征根系 
 
-$\displaystyle \lambda _{i} ,i=1,2,...,n$
+$\lambda _{i} ,i=1,2,...,n$
 
 ，则可进行因式分解
 
-$\displaystyle \left[\prod _{i=1}^{n}\left(\frac{d}{dx} -\lambda _{i}\right)\right] y=b( x)$
+$\left[\prod _{i=1}^{n}\left(\frac{d}{dx} -\lambda _{i}\right)\right] y=b( x)$
 
-出于简化书写的目的，定义微分算子 $\displaystyle D=\frac{d}{dx}$，则上式可重写为
+出于简化书写的目的，定义微分算子 $D=\frac{d}{dx}$，则上式可重写为
 
-$\displaystyle \left[\prod _{i=1}^{n}( D-\lambda _{i})\right] y=b( x)$
+$\left[\prod _{i=1}^{n}( D-\lambda _{i})\right] y=b( x)$
 
 每次释放出一个括号，即
 
-$\displaystyle \left[\prod _{i=1}^{n-1}( D-\lambda _{i})\right]( D-\lambda _{n}) y=b( x)$
+$\left[\prod _{i=1}^{n-1}( D-\lambda _{i})\right]( D-\lambda _{n}) y=b( x)$
 
-若定义 $\displaystyle y_{1} =( D-\lambda _{n}) y$，则
+若定义 $y_{1} =( D-\lambda _{n}) y$，则
 
-$\displaystyle \left[\prod _{i=1}^{n-1}( D-\lambda _{i})\right] y_{1} =b( x)$
+$\left[\prod _{i=1}^{n-1}( D-\lambda _{i})\right] y_{1} =b( x)$
 
 释放到最后一个括号之后
 
-$\displaystyle ( D-\lambda _{1}) y_{n-1} =b( x)$
+$( D-\lambda _{1}) y_{n-1} =b( x)$
 
 这个时候需要求解的是一个一阶常系数非齐次线形微分方程。其有通解
 
-$\displaystyle y_{n-1} =y_{n-1}( x)$
+$y_{n-1} =y_{n-1}( x)$
 
 将其代回定义
 
-$\displaystyle y_{n-1}( x) =( D-\lambda _{2}) y_{n-2}$
+$y_{n-1}( x) =( D-\lambda _{2}) y_{n-2}$
 
-，则变成求解 $\displaystyle y_{n-2}$ 的另一个 一阶常系数非齐次线形微分方程，有通解
+，则变成求解 $y_{n-2}$ 的另一个 一阶常系数非齐次线形微分方程，有通解
 
-$\displaystyle y_{n-2} =y_{n-2}( x)$
+$y_{n-2} =y_{n-2}( x)$
 
-逐次求解，则可得到 $\displaystyle y( x)$ 的通解表达式。
+逐次求解，则可得到 $y( x)$ 的通解表达式。
 
-这是编程中常用的迭代方法。虽然没有线性空间法书写起来简洁，但是适用于单线程编程。
+这是编程中常用的递归方法。虽然没有线性空间法书写起来简洁，但是适用于单线程编程。
 
 ### 代码编程
 
-以下是SymPy编程示例
+以下是SymPy 迭代算法的实现
 
 ```python
 # dsolve is capable of solving high-order linear ODE
@@ -235,3 +236,18 @@ def dsolve_nth_linear_ode(lambdas, bx):
 
 > 读者们可能有注意到，ipynb 文件中，用 $f(x)$ 作为待求方程。这是因为在 多变量微积分中，$y,z$ 常被用作自变量。所以 就只能用 $f,g,h$ 这些字母表示方程了
 
+### 微分算子的适用范围
+
+需要说明的是，微分算子法不适用于非常系数微分方程。
+
+微分算子满足 结合律，分配律，但是不满足交换律。比如说
+
+$\displaystyle D\lambda ( x) \neq \lambda ( x) D$
+
+证明：
+
+$\displaystyle ( D\lambda ( x)) y( x) =\frac{d}{dx}( \lambda ( x) y( x)) =\left(\frac{d}{dx} \lambda ( x)\right) y( x) +\lambda ( x)\left(\frac{d}{dx} y( x)\right) \neq \lambda ( x)\left(\frac{d}{dx} y( x)\right)$
+
+只有当 $\lambda(x)=\lambda$  为常系数的时候，$\frac{d}{dx} \lambda ( x) = 0 $，等号才成立。
+
+这也就是为什么微分算子法 只适用于常系数微分方程，不适用于非常系数微分方程。
