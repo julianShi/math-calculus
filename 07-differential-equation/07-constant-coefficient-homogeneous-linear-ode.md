@@ -6,6 +6,8 @@
 
 $y''+py'+qy=0$
 
+出于总结知识点的目的，不假证明地猜测通解。后续会具体证明。
+
 我们来猜测解的形式。因为指数函数 $e^{rx}$ 有比较好的性质，即各阶导数只相差一个常数比例，所以用待定系数法，猜测解的形式。代入后，得到
 
 $\left( e^{rx}\right) ''+p\left( e^{rx}\right) '+q\left( e^{rx}\right) =0$
@@ -26,7 +28,7 @@ $r^{2} +pr+q=0$
 
 通解
 
-> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator，
+> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator
 >
 > 把下列 LaTeX 源码贴入输入框中
 >
@@ -42,7 +44,7 @@ $r^{2} +pr+q=0$
 
 当有重根
 
-> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator，
+> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator
 >
 > 把下列 LaTeX 源码贴入输入框中
 >
@@ -58,7 +60,7 @@ $r^{2} +pr+q=0$
 
 当有复数根
 
-> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator，
+> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator
 >
 > 把下列 LaTeX 源码贴入输入框中
 >
@@ -145,7 +147,9 @@ $$
 
 即得到通解
 
-$y_{i} =\sum _{j} D_{j} e^{\lambda _{j} x}$
+$$
+y_{i} =\sum _{j} D_{j} e^{\lambda _{j} x}
+$$
 
 ### 特征方程有重根
 
@@ -195,7 +199,7 @@ $z=y' -\lambda _{1} y$
 
 $z_{1} =z' -\lambda _{2} z$
 
-$\zeta _{1} =( z_{1} ' -\lambda z_{1})$
+$\zeta _{1} =z_{1} ' -\lambda z_{1}$
 
 $\zeta _{1} ' -\lambda \zeta _{1} =0$
 
@@ -229,7 +233,7 @@ $$
 \end{pmatrix}
 $$
 
-其中，$\mathbf{B}$ 可对角化，$\mathbf{D}$ 不可对角化，$\mathbf{C}$ 可以通过相似变换消去。
+其中， $\mathbf{B}$ 可对角化， $\mathbf{D}$ 不可对角化， $\mathbf{C}$ 可以通过相似变换消去。
 
 可以构造相似变换矩阵 $\mathbf{P}$, 使得
 

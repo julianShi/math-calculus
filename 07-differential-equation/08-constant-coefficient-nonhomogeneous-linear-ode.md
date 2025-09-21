@@ -1,11 +1,11 @@
-对于有非$y^{(n)}$ 项的高阶常系数非齐次线性微分方程
-
+对于有非 $y^{(n)}$ 项的高阶常系数非齐次线性微分方程
 $$
 y^{( n)} +a_{1} y^{( n-1)} +...+a_{n-1} y^{( 1)} +a_{n} y=f(x)
 $$
 
-
 我们推导其通解。
+
+## 线性空间法
 
 ### 特征方程无重根
 
@@ -147,7 +147,7 @@ $$
 $$
 
 
-其中，$\mathbf{B}$ 不可对角化的上三角矩阵，$\mathbf{D}$ 可对角化。
+其中， $\mathbf{B}$ 不可对角化的上三角矩阵， $\mathbf{D}$ 可对角化。
 
 根据 "**特征方程无重根** " 中介绍的方法，可求得通解 $\mathbf{z}( x)$
 
@@ -167,4 +167,71 @@ $$
 
 
 因为 $\mathbf{B}$ 不可对角化的上三角矩阵，所以可以展开成为标量形式，从下到上依次求解一阶常系数非齐次线性微分方程，得到通解 $\mathbf{y}(x)$。
+
+## 线性算子法
+
+线性算子法可以避免重根和非重根的讨论
+
+已知常系数线性微分方程的特征方程有特征根系 
+
+$\displaystyle \lambda _{i} ,i=1,2,...,n$
+
+，则可进行因式分解
+
+$\displaystyle \left[\prod _{i=1}^{n}\left(\frac{d}{dx} -\lambda _{i}\right)\right] y=b( x)$
+
+出于简化书写的目的，定义微分算子 $\displaystyle D=\frac{d}{dx}$，则上式可重写为
+
+$\displaystyle \left[\prod _{i=1}^{n}( D-\lambda _{i})\right] y=b( x)$
+
+每次释放出一个括号，即
+
+$\displaystyle \left[\prod _{i=1}^{n-1}( D-\lambda _{i})\right]( D-\lambda _{n}) y=b( x)$
+
+若定义 $\displaystyle y_{1} =( D-\lambda _{n}) y$，则
+
+$\displaystyle \left[\prod _{i=1}^{n-1}( D-\lambda _{i})\right] y_{1} =b( x)$
+
+释放到最后一个括号之后
+
+$\displaystyle ( D-\lambda _{1}) y_{n-1} =b( x)$
+
+这个时候需要求解的是一个一阶常系数非齐次线形微分方程。其有通解
+
+$\displaystyle y_{n-1} =y_{n-1}( x)$
+
+将其代回定义
+
+$\displaystyle y_{n-1}( x) =( D-\lambda _{2}) y_{n-2}$
+
+，则变成求解 $\displaystyle y_{n-2}$ 的另一个 一阶常系数非齐次线形微分方程，有通解
+
+$\displaystyle y_{n-2} =y_{n-2}( x)$
+
+逐次求解，则可得到 $\displaystyle y( x)$ 的通解表达式。
+
+这是编程中常用的迭代方法。虽然没有线性空间法书写起来简洁，但是适用于单线程编程。
+
+### 代码编程
+
+以下是SymPy编程示例
+
+```python
+# dsolve is capable of solving high-order linear ODE
+# I rewrite the algorithm, simply for demonstration
+# lambdas are the coefficients
+# bx is the non-homogeneous part as a function of x
+def dsolve_nth_linear_ode(lambdas, bx):
+  yx = bx
+  for lambda_ in lambdas:
+    x = Symbol('x')
+    y = Function('y')(x)
+    lhs = y.diff(x) - lambda_ * y - yx
+    # I used the built-in dsolve to solve the first order ODE
+    sol = dsolve(Eq(lhs, yx), y, hint='1st_linear')
+    yx = sol.rhs
+  return yx
+```
+
+> 读者们可能有注意到，ipynb 文件中，用 $f(x)$ 作为待求方程。这是因为在 多变量微积分中，$y,z$ 常被用作自变量。所以 就只能用 $f,g,h$ 这些字母表示方程了
 
