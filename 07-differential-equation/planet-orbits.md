@@ -264,6 +264,30 @@ $\displaystyle \frac{1}{r} =x=C_{7} +C_{8} \theta $
 
 是一条螺旋线。当 $C_8>0$  行星旋出。当 $C_8<0$  行星旋进。当 $C_8=0$  行星是不稳定的圆形轨道。
 
+如果旋进的话，行星会不会旋进到太阳呢？
+
+对通解两侧对时间微分
+
+$-\frac{1}{r^{2}}\dot{r} =C_{8}\dot{\theta }$
+
+代入动量公式
+
+$L=mr^{2}\dot{\theta }$
+
+消去角度，得到
+
+$-\frac{1}{r^{2}}\dot{r} =C_{8}\dot{\theta } =\frac{C_{8} L}{mr^{2}}$
+
+消去相同因式，得到
+
+$\dot{r} =-\frac{C_{8} L}{m}$
+
+积分得到
+
+$r( t) =R_0-\frac{C_{8} L}{m} t$
+
+即行星会以恒定径向速度，坠入恒星（角速度越来越快），或者远离恒星。
+
 ### 束缚态
 
 角动量小的时候
@@ -274,13 +298,21 @@ $\displaystyle \frac{1}{r} =x=C_{7} +C_{8} \theta $
 
 $\displaystyle \frac{1}{r} =x=C_{7}\exp\left(\sqrt{\frac{GMm^{2}}{L^{2}} -1} \theta \right) +C_{8}\exp\left( -\sqrt{\frac{GMm^{2}}{L^{2}} -1} \theta \right)$
 
-总结而言
+假设 $\theta(t)$ 单调递增。
+
+当 $C_7C_8>0$ ，即同号 ，$r$ 有最大值。意味着，即使行星刚开始旋出，也会随后旋入，最终坠落到恒星。
+
+当 $C_7 C_8<0$  ，$r$ 无最大值。意味着，即使行星旋出的话，将以渐近线的方式运动到无穷远。
+
+当 $C_7C_8=0$  ，行星轨道退化成螺旋线
+
+### 总结
 
 | 分类   | 判定  | 3维轨道 | 判定        | 4维轨道      |
 | ------ | ----- | ------- | ----------- | ------------ |
-| 束缚态 | $T<V$ | 椭圆    | $L^2<GMm^2$ | 螺旋         |
-| 临界态 | $T=V$ | 抛物线  | $L^2=GMm^2$ | 螺旋         |
 | 自由态 | $T>V$ | 双曲线  | $L^2>GMm^2$ | 可相交渐近线 |
+| 临界态 | $T=V$ | 抛物线  | $L^2=GMm^2$ | 螺旋         |
+| 束缚态 | $T<V$ | 椭圆    | $L^2<GMm^2$ | 螺旋         |
 
 ## 2维空间行星轨道
 
@@ -292,11 +324,11 @@ $\displaystyle \ddot{\mathbf{r}} =-\frac{GMm}{| \mathbf{r}| }\mathbf{r}$
 
 $\displaystyle \frac{C_{1}}{r^{2}}\frac{d}{d\theta }\left(\frac{dr}{d\theta }\frac{C_{1}}{r^{2}}\right) -r\left(\frac{C_{1}}{r^{2}}\right)^{2} +\frac{GM}{r} =0$
 
-,
+消去相同因式
 
 $\displaystyle \frac{d}{d\theta }\left(\frac{1}{r^{2}}\frac{dr}{d\theta }\right) -\frac{1}{r} +\frac{GM}{C_{1}^{2}} r=0$
 
-作变量替换，得到
+作类似变量替换，得到
 
 $\displaystyle \frac{d}{d\theta }\left(\frac{dx}{d\theta }\right) +x-\frac{GM}{C_{1}^{2} x} =0$
 
@@ -311,6 +343,8 @@ $\displaystyle V=\int -\frac{GMm}{r} dr=-GMm\ln r$
 ## 免费网页SymPy计算器
 
 忘记怎么求解微分方程？这个好办。可以使用免费的 网页计算器 https://bubbleuniverse.github.io/symbolic/calculator
+
+### 3维比耐方程
 
 针对3维比耐方程
 
@@ -329,7 +363,7 @@ $$ \frac{d}{dx}\frac{d}{dx}f\left(x\right)+f\left(x\right)-\frac{GMm^2}{L^2} = 0
 
 $$ f{\left(x \right)} = C_{1} \sin{\left(x \right)} + C_{2} \cos{\left(x \right)} + \frac{G M m^{2}}{L^{2}} $$
 
-
+### 4维比耐方程
 
 针对4维比耐方程
 
@@ -354,27 +388,37 @@ $$ f{\left(x \right)} = C_{1} e^{- \frac{x \sqrt{G M m^{2} - L^{2}}}{L}} + C_{2}
 
 ### 4维自由态
 
-点击链接 https://www.desmos.com/calculator/py8wpxidyt 得到 下述公式，和行星轨道曲线
+点击链接 https://www.desmos.com/calculator/bt0m6bwlcr 得到 下述公式，和行星轨道曲线
 
-$\displaystyle r=\frac{1}{\cos (l\theta +a)} ,l\in ( 0,1)$
+$\displaystyle r=\frac{1}{\cos (l\theta)} ,l\in ( 0,1), l\theta \in (-\frac{\pi}{2},\frac{\pi}{2})$
 
 可见，动量大时，行星轨道是一条不闭合的曲线。从无穷远来，到无穷远去。
 
+<div>
+  <iframe src="https://www.desmos.com/calculator/bt0m6bwlcr?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+
+
 ### 4维临界态
 
-点击链接 https://www.desmos.com/calculator/vtnz25ounx 得到 下述公式，和行星轨道曲线
+点击链接 https://www.desmos.com/calculator/k7pgzyqo5a 得到 下述公式，和行星轨道曲线
 
-$\displaystyle r=\frac{1}{1+a\theta }$
+$\displaystyle r=\frac{1}{\theta }$
 
 可见，轨道是螺旋线
 
+<iframe src="https://www.desmos.com/calculator/k7pgzyqo5a?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+物理解释：如果是旋进的话，行星最终会坠落到恒星上。
+
 ### 4维束缚态
 
-点击链接 https://www.desmos.com/calculator/qyr8uxm0bk 得到 下述公式，和行星轨道曲线
+点击链接 https://www.desmos.com/calculator/pdxfdpfehy 得到 下述公式，和行星轨道曲线
 
-$\displaystyle r=\frac{1}{\exp( l\theta ) +a\exp( -l\theta )}$
+$\displaystyle r=\frac{1}{C_1\exp( l\theta ) +C_2\exp( -l\theta )}$
 
-可见，轨道也是螺旋线
+<iframe src="https://www.desmos.com/calculator/pdxfdpfehy?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 # 参考
 
