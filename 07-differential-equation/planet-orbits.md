@@ -2,19 +2,15 @@
 
 本文从最基本的能量守恒，和角动量守恒，来推导在中心力场（地球-太阳系统）下的行星运行轨迹（椭圆轨道，开普勒第一定律）。讨论将不局限于三维（各项同性）空间。将推广到二维，四维。
 
-https://zhuanlan.zhihu.com/p/1953136636943634732
+# 背景知识
 
-https://zhuanlan.zhihu.com/p/136265256 
-
-## 3维行星椭圆轨道推导
-
-### 能量守恒和角动量守恒
+## 能量守恒和角动量守恒
 
 三维均匀各向同性空间（以下简称三位空间）中，把太阳看作一个质点的话，地日之间的万有引力随距离的平方衰减
 
 $\displaystyle F=-\frac{GMm}{r^{2}}$
 
-其中 $\displaystyle G$ 为引力常数，$\displaystyle M$ 是太阳质量，$\displaystyle m$ 是地球质量
+其中 $\displaystyle G$ 为引力常数，$\displaystyle M$ 是太阳质量，$\displaystyle m$ 是地球质量，$r$ 是地日距离
 
 用矢量表示的话，
 
@@ -22,7 +18,19 @@ $\displaystyle m\ddot{\mathbf{r}} =\mathbf{F} =-\frac{GMm}{| \mathbf{r}| ^{3}}\m
 
 其中，粗体表示矢量，$\displaystyle \ddot{\mathbf{r}}$ 表示 位置矢量 对时间的二次微分，即加速度。
 
-这个公式也能用拉格朗日方法，从中心引力势场中推导出来。详见https://zhuanlan.zhihu.com/p/1953136636943634732。
+| 维度 | 引力                 | 引力势                                                       |
+| ---- | -------------------- | ------------------------------------------------------------ |
+| 2    | $-\frac{GMm}{r}$     | $-GMm\ln{r}+C$                                               |
+| 3    | $-\frac{GMm}{r^{2}}$ | $\int _{r}^{\infty } -\frac{GMm}{r^{2}} dr=\left[\frac{GMm}{r}\right]_{r}^{\infty } =-\frac{2GMm}{r}$ |
+| 4    | $-\frac{GMm}{r^{3}}$ | $\int _{r}^{\infty } -\frac{GMm}{r^{3}} dr=\left[\frac{2GMm}{r^{2}}\right]_{r}^{\infty } =-\frac{2GMm}{r^{2}}$ |
+
+在不同维度的空间中，引力随距离的衰减快慢也不一样。这可以由 闭合曲面的引力通量为0来推导
+
+$$ \oint _{\Gamma }\mathbf{g} d\mathbf{s} =0 $$
+
+这也叫做 高斯重力定律 http://www.shuxueji.com/w/2221 
+
+这个公式也能用拉格朗日方法，从中心引力势场中推导出来。详见 https://zhuanlan.zhihu.com/p/1953136636943634732。
 
 $\displaystyle T-V=\frac{1}{2}\left( m\dot{r}^{2} +mr^{2}\dot{\theta }^{2}\right) +\frac{GMm}{r^{2}}$
 
@@ -31,6 +39,8 @@ $\displaystyle T-V=\frac{1}{2}\left( m\dot{r}^{2} +mr^{2}\dot{\theta }^{2}\right
 $\displaystyle L=mr^{2} \omega =mr^{2}\dot{\theta }$
 
 从这两点出发，既可以通过拉格朗日的方法推导，也可以通过牛顿第二定律推导。本文只介绍第二种方法。
+
+## 极坐标系
 
 在推导之前，先介绍直角坐标系和极坐标系。
 
@@ -48,45 +58,53 @@ $\displaystyle \mathbf{r} =r\mathbf{e}_{n} +0\mathbf{e}_{t}$
 
 但是我们最关心的是 $\displaystyle r( \theta )$，即行星轨迹。 时间将作为隐变量消去。
 
-两套单位向量的转换关系是
+两套单位向量的转换关系是：
+
+径向
 
 $\displaystyle \mathbf{e}_{n} =\mathbf{e}_{x}\cos \theta +\mathbf{e}_{y}\sin \theta $
 
-,
+切向
 
 $\displaystyle \mathbf{e}_{t} =-\mathbf{e}_{x}\sin \theta +\mathbf{e}_{y}\cos \theta $
 
 若写成矩阵形式，可以看作从 $\displaystyle (\mathbf{e}_{x} ,\mathbf{e}_{y})$ 到 $\displaystyle (\mathbf{e}_{n} ,\mathbf{e}_{t})$ 的旋转变换。
 
-单位极坐标的微分形式为
+单位极坐标的微分形式为：
+
+对角度微分
 
 $\displaystyle \frac{d}{d\theta }\mathbf{e}_{n} =-\mathbf{e}_{x}\sin \theta +\mathbf{e}_{y}\cos \theta =\mathbf{e}_{t}$
 
-,
+对角度微分
 
 $\displaystyle \frac{d}{d\theta }\mathbf{e}_{t} =-\mathbf{e}_{x}\cos \theta -\mathbf{e}_{y}\sin \theta =-\mathbf{e}_{n}$
 
-,
+对时间微分
 
 $\displaystyle \dot{\mathbf{e}}_{n} =\frac{d\theta }{dt}\frac{d}{d\theta }\mathbf{e}_{n} =\dot{\theta }\mathbf{e}_{t}$
 
-,
+对时间微分
 
 $\displaystyle \dot{\mathbf{e}}_{t} =\frac{d\theta }{dt}\frac{d}{d\theta }\mathbf{e}_{t} =-\dot{\theta }\mathbf{e}_{n}$
 
 这个微分公式将在后文用到。
 
+# 行星轨道方程求解
 
+## 3维空间行星轨道
 
 我们把加速度公式
 
 $\displaystyle \ddot{\mathbf{r}} =-\frac{GM}{|r|^{3}}\mathbf{r}$
 
-表示成为对 $\displaystyle \theta $ 的微分
+表示成为对 $\displaystyle \theta $ 的微分：
+
+一次微分
 
 $\displaystyle \dot{\mathbf{r}} =\dot{r}\mathbf{e}_{n} +r\dot{\mathbf{e}}_{n} =\dot{r}\mathbf{e}_{n} +r\dot{\theta }\mathbf{e}_{t}$
 
-,
+二次微分
 
 $\displaystyle \ddot{\mathbf{r}} =\ddot{r}\mathbf{e}_{n} +\dot{r}\dot{\theta }\mathbf{e}_{t} +(\dot{r}\dot{\theta } +r\ddot{\theta })\mathbf{e}_{t} -r\dot{\theta }^{2}\mathbf{e}_{n}$
 
@@ -94,11 +112,13 @@ $\displaystyle \ddot{\mathbf{r}} =\ddot{r}\mathbf{e}_{n} +\dot{r}\dot{\theta }\m
 
 $\displaystyle \ddot{r}\mathbf{e}_{n} +\dot{r}\dot{\theta }\mathbf{e}_{t} +(\dot{r}\dot{\theta } +r\ddot{\theta })\mathbf{e}_{t} -r\dot{\theta }^{2}\mathbf{e}_{n} =-\frac{GM}{r^{2}}\mathbf{e}_{n}$
 
-因为 $\displaystyle \mathbf{e}_{n} ,\mathbf{e}_{t}$ 相互正交，所以得到两套等式
+因为 $\displaystyle \mathbf{e}_{n} ,\mathbf{e}_{t}$ 相互正交，所以得到两套等式：
+
+径向
 
 $\displaystyle \ddot{r} -r\dot{\theta }^{2} +\frac{GM}{r^{2}} =0$
 
-,
+切向
 
 $\displaystyle 2\dot{r}\dot{\theta } +r\ddot{\theta } =0$
 
@@ -114,13 +134,13 @@ $\displaystyle r^{2}\dot{\theta } =C_{1}$
 
 $\displaystyle \frac{L}{m} =r^{2}\dot{\theta } =C_{1}$
 
-
+第二套等式积分这么简洁，正是因为恒星对行星的中心引力没有切向 $\mathbf{e}_{n}$ 的分量，所以也说明了，中心力场是角动量守恒的前提条件。
 
 根据链式法则
 
 $\displaystyle r=r( \theta ( t))$
 
-,
+一次微分
 
 $\displaystyle \dot{r} =\frac{d}{dt} r( \theta ( t)) =\frac{dr}{d\theta }\frac{d\theta }{dt} =\frac{dr}{d\theta }\dot{\theta }$
 
@@ -128,7 +148,7 @@ $\displaystyle \dot{r} =\frac{d}{dt} r( \theta ( t)) =\frac{dr}{d\theta }\frac{d
 
 $\displaystyle \dot{r} =\frac{dr}{d\theta }\frac{C_{1}}{r^{2}}$
 
-,
+二次微分
 
 $\displaystyle \ddot{r} =\frac{d}{dt}\left(\frac{dr}{d\theta }\frac{C_{1}}{r^{2}}\right) =\dot{\theta }\frac{d}{d\theta }\left(\frac{dr}{d\theta }\frac{C_{1}}{r^{2}}\right)$
 
@@ -140,11 +160,11 @@ $\displaystyle \ddot{r} =\frac{C_{1}}{r^{2}}\frac{d}{d\theta }\left(\frac{dr}{d\
 
 $\displaystyle \frac{C_{1}}{r^{2}}\frac{d}{d\theta }\left(\frac{dr}{d\theta }\frac{C_{1}}{r^{2}}\right) -r\left(\frac{C_{1}}{r^{2}}\right)^{2} +\frac{GM}{r^{2}} =0$
 
-,
+消去相同因式
 
 $\displaystyle \frac{d}{d\theta }\left(\frac{1}{r^{2}}\frac{dr}{d\theta }\right) -\frac{1}{r} +\frac{GM}{C_{1}^{2}} =0$
 
-### 第一种变量替换法
+## 第一种变量替换法
 
 再对 $\displaystyle \theta $ 作微分
 
@@ -174,7 +194,7 @@ $\displaystyle \frac{dr}{r^{2}} =C_{6}\cos( \theta +\theta _{0}) d\theta $
 
 $\displaystyle -\frac{1}{r} =C_{6}\sin( \theta +\theta _{0}) +C_{7}$
 
-### 第二种变量替换法
+## 第二种变量替换法
 
 定义
 
@@ -188,17 +208,19 @@ $\displaystyle \frac{dr}{d\theta } =\frac{dx}{d\theta }\frac{dr}{dx} =-\frac{1}{
 
 $\displaystyle \frac{d}{d\theta }\left(\frac{dx}{d\theta }\right) +x-\frac{GM}{C_{1}^{2}} =0$
 
+这就是 比耐公式 https://wuli.wiki/online/Binet.html
+
 得到通解
 
 $\displaystyle \frac{1}{r} =x=C_{3}\cos \theta +C_{4}\sin \theta +\frac{GM}{C_{1}^{2}} =C_{6}\cos( \theta +\theta _{0}) +\frac{GMm^{2}}{L^{2}}$
 
-即是开普勒辛辛苦苦花费8年，1609年才拼凑出来的椭圆轨道。而我们用1665年牛顿发明微积分，8分钟就求解出了椭圆轨道解。可见，物理人掌握先进的数学工具有多么重要。珍惜生命，学好数学。
+这，即是开普勒辛辛苦苦花费8年，1609年才拼凑出来的椭圆轨道。而我们用1665年牛顿发明微积分，8分钟就求解出了椭圆轨道解。可见，物理人掌握先进的数学工具有多么重要。珍惜生命，学好数学。
 
 
 
 掌握上述公式之后，接下来就是有趣的，分析不同维度行星轨道。
 
-### 4维空间行星轨道
+## 4维空间行星轨道
 
 在4维空间，引力随距离的3次方衰减，加速度等式变成
 
@@ -208,7 +230,7 @@ $\displaystyle \ddot{\mathbf{r}} =-\frac{GMm}{| \mathbf{r}| ^{3}}\mathbf{r}$
 
 $\displaystyle \frac{C_{1}}{r^{2}}\frac{d}{d\theta }\left(\frac{dr}{d\theta }\frac{C_{1}}{r^{2}}\right) -r\left(\frac{C_{1}}{r^{2}}\right)^{2} +\frac{GM}{r^{3}} =0$
 
-,
+消除相同因式
 
 $\displaystyle \frac{d}{d\theta }\left(\frac{1}{r^{2}}\frac{dr}{d\theta }\right) -\frac{1}{r} +\frac{GM}{C_{1}^{2} r} =0$
 
@@ -218,21 +240,35 @@ $\displaystyle \frac{d}{d\theta }\left(\frac{dx}{d\theta }\right) +\left( 1-\fra
 
 这是二元齐次常系数线性微分方程。
 
-当$\displaystyle 1-\frac{GMm^2}{L^{2}}  >0$ ，即角动量非常大
+根据其特征根的正负号，作如下讨论
+
+### 自由态
+
+角动量大的时候
+
+$\displaystyle 1-\frac{GMm^2}{L^{2}}  >0$ 
 
 有通解
 
 $\displaystyle \frac{1}{r} =x=C_{6}\cos\left(\sqrt{1-\frac{GMm^{2}}{L^{2}}} \theta +\theta _{0}\right)$
 
-当$\displaystyle 1-\frac{GMm^2}{L^{2}} =0$
+### 临界态
+
+角动量刚好的时候
+
+$\displaystyle 1-\frac{GMm^2}{L^{2}} =0$
 
 有通解
 
 $\displaystyle \frac{1}{r} =x=C_{7} +C_{8} \theta $
 
-是一条螺旋线
+是一条螺旋线。当 $C_8>0$  行星旋出。当 $C_8<0$  行星旋进。当 $C_8=0$  行星是不稳定的圆形轨道。
 
-当 $\displaystyle 1-\frac{GMm^2}{L^{2}} < 0$ ，即角动量非常小
+### 束缚态
+
+角动量小的时候
+
+ $\displaystyle 1-\frac{GMm^2}{L^{2}} < 0$ 
 
 有通解
 
@@ -246,35 +282,7 @@ $\displaystyle \frac{1}{r} =x=C_{7}\exp\left(\sqrt{\frac{GMm^{2}}{L^{2}} -1} \th
 | 临界态 | $T=V$ | 抛物线  | $L^2=GMm^2$ | 螺旋         |
 | 自由态 | $T>V$ | 双曲线  | $L^2>GMm^2$ | 可相交渐近线 |
 
-
-
-### Desmos 作图
-
-在 https://www.desmos.com/calculator 中输入下述公式
-
-$\displaystyle r=\frac{1}{\cos (l\theta +a)} ,l\in ( 0,1)$
-
-可见，动量大时，行星轨道是一条不闭合的曲线。从无穷远来，到无穷远去。
-
-
-
-在 https://www.desmos.com/calculator 中输入下述公式
-
-$\displaystyle r=\frac{1}{1+a\theta }$
-
-可见，轨道是螺旋线
-
-
-
-在 https://www.desmos.com/calculator 中输入下述公式
-
-$\displaystyle r=\frac{1}{\exp( l\theta ) +a\exp( -l\theta )}$
-
-
-
-轨道是一种特殊的螺旋线
-
-### 2维空间行星轨道
+## 2维空间行星轨道
 
 在2维空间，引力随距离的1次方衰减，加速度等式变成
 
@@ -297,4 +305,82 @@ $\displaystyle \frac{d}{d\theta }\left(\frac{dx}{d\theta }\right) +x-\frac{GM}{C
 $\displaystyle V=\int -\frac{GMm}{r} dr=-GMm\ln r$
 
 在无穷远处为无穷大，所以知道，对于有限动能的行星，其轨道一定不会到无穷远。
+
+# 软件工具
+
+## 免费网页SymPy计算器
+
+忘记怎么求解微分方程？这个好办。可以使用免费的 网页计算器 https://bubbleuniverse.github.io/symbolic/calculator
+
+针对3维比耐方程
+
+$$ \frac{d}{dx}\frac{d}{dx}f\left(x\right)+f\left(x\right)-\frac{GMm^2}{L^2} = 0 $$
+
+在网页上
+
+1. 粘贴下述 LaTeX 公式到输入框
+
+```latex
+ \frac{d}{dx}\frac{d}{dx}f\left(x\right)+f\left(x\right)-\frac{GMm^2}{L^2} 
+```
+
+2. 选择  ”求解微分方程 dsolve “
+3. 点击“计算 Calculate” 按钮，即可得到通解
+
+$$ f{\left(x \right)} = C_{1} \sin{\left(x \right)} + C_{2} \cos{\left(x \right)} + \frac{G M m^{2}}{L^{2}} $$
+
+
+
+针对4维比耐方程
+
+$$ \frac{d}{dx}\frac{d}{dx}f\left(x\right)+\left(1-\frac{GMm^2}{L^2}\right)f\left(x\right) = 0 $$ 
+
+在网页上
+
+1. 粘贴下述 LaTeX 公式到输入框
+
+```latex
+ \frac{d}{dx}\frac{d}{dx}f\left(x\right)+\left(1-\frac{GMm^2}{L^2}\right)f\left(x\right) 
+```
+
+2. 选择  ”求解微分方程 dsolve “
+3. 点击“计算 Calculate” 按钮，即可得到通解
+
+$$ f{\left(x \right)} = C_{1} e^{- \frac{x \sqrt{G M m^{2} - L^{2}}}{L}} + C_{2} e^{\frac{x \sqrt{G M m^{2} - L^{2}}}{L}} $$
+
+
+
+## Desmos 作图
+
+### 4维自由态
+
+点击链接 https://www.desmos.com/calculator/py8wpxidyt 得到 下述公式，和行星轨道曲线
+
+$\displaystyle r=\frac{1}{\cos (l\theta +a)} ,l\in ( 0,1)$
+
+可见，动量大时，行星轨道是一条不闭合的曲线。从无穷远来，到无穷远去。
+
+### 4维临界态
+
+点击链接 https://www.desmos.com/calculator/vtnz25ounx 得到 下述公式，和行星轨道曲线
+
+$\displaystyle r=\frac{1}{1+a\theta }$
+
+可见，轨道是螺旋线
+
+### 4维束缚态
+
+点击链接 https://www.desmos.com/calculator/qyr8uxm0bk 得到 下述公式，和行星轨道曲线
+
+$\displaystyle r=\frac{1}{\exp( l\theta ) +a\exp( -l\theta )}$
+
+可见，轨道也是螺旋线
+
+# 参考
+
+https://zhuanlan.zhihu.com/p/1953136636943634732
+
+https://zhuanlan.zhihu.com/p/136265256 
+
+https://wuli.wiki/online/Binet.html
 
