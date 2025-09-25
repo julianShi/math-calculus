@@ -31,7 +31,7 @@ $$F=-\frac{GMm}{r^{2}}$$
 
 $$m\ddot{\mathbf{r}} =\mathbf{F} =-\frac{GMm}{| \mathbf{r}| ^{3}}\mathbf{r}$$
 
-其中，粗体表示矢量， $\ddot{\mathbf{r}}$ 表示 位置矢量 对时间的二次微分，即加速度。
+其中，粗体表示矢量， $$\ddot{\mathbf{r}}$$ 表示 位置矢量 对时间的二次微分，即加速度。
 
 | 维度 | 引力                 | 引力势                |
 | ---- | -------------------- | --------------------- |
@@ -65,7 +65,7 @@ $$L=mr^{2} \omega =mr^{2}\dot{\theta }$$
 
 $$\mathbf{r} =r_{x}\mathbf{e}_{x} +r_{y}\mathbf{e}_{y}$$
 
-其中 $\mathbf{e}_{x} ,\ \mathbf{e}_{y}$ 是单位向量
+其中 $$\mathbf{e}_{x} ,\ \mathbf{e}_{y}$$ 是单位向量
 
 而在极坐标系中
 
@@ -85,7 +85,7 @@ $$\mathbf{e}_{n} =\mathbf{e}_{x}\cos \theta +\mathbf{e}_{y}\sin \theta $$
 
 $$\mathbf{e}_{t} =-\mathbf{e}_{x}\sin \theta +\mathbf{e}_{y}\cos \theta $$
 
-若写成矩阵形式，可以看作从 $(\mathbf{e}_{x} ,\mathbf{e}_{y})$ 到 $(\mathbf{e}_{n} ,\mathbf{e}_{t})$ 的旋转变换。
+若写成矩阵形式，可以看作从 $$(\mathbf{e}_{x} ,\mathbf{e}_{y})$$ 到 $$(\mathbf{e}_{n} ,\mathbf{e}_{t})$$ 的旋转变换。
 
 ### 极坐标系微分
 
@@ -113,6 +113,8 @@ $$\dot{\mathbf{e}}_{t} =\frac{d\theta }{dt}\frac{d}{d\theta }\mathbf{e}_{t} =-\d
 
 ## 3维空间行星轨道
 
+### 受力分解
+
 我们把加速度公式
 
 $$\ddot{\mathbf{r}} =-\frac{GM}{|r|^{3}}\mathbf{r}$$
@@ -131,7 +133,7 @@ $$\ddot{\mathbf{r}} =\ddot{r}\mathbf{e}_{n} +\dot{r}\dot{\theta }\mathbf{e}_{t} 
 
 $$\ddot{r}\mathbf{e}_{n} +\dot{r}\dot{\theta }\mathbf{e}_{t} +(\dot{r}\dot{\theta } +r\ddot{\theta })\mathbf{e}_{t} -r\dot{\theta }^{2}\mathbf{e}_{n} =-\frac{GM}{r^{2}}\mathbf{e}_{n}$$
 
-因为 $\mathbf{e}_{n} ,\mathbf{e}_{t}$ 相互正交，所以得到两套等式：
+因为 $$\mathbf{e}_{n} ,\mathbf{e}_{t}$$ 相互正交，所以得到两套等式：
 
 径向
 
@@ -140,6 +142,8 @@ $$\ddot{r} -r\dot{\theta }^{2} +\frac{GM}{r^{2}} =0$$
 切向
 
 $$2\dot{r}\dot{\theta } +r\ddot{\theta } =0$$
+
+### 角动量守恒
 
 其中，第二套左右各乘以 $r$，即得到
 
@@ -153,7 +157,9 @@ $$r^{2}\dot{\theta } =C_{1}$$
 
 $$\frac{L}{m} =r^{2}\dot{\theta } =C_{1}$$
 
-第二套等式积分这么简洁，正是因为恒星对行星的中心引力没有切向 $\mathbf{e}_{n}$ 的分量，所以也说明了，中心力场是角动量守恒的前提条件。
+第二套等式积分这么简洁，正是因为恒星对行星的中心引力没有切向 $$\mathbf{e}_{n}$$ 的分量，所以也说明了，中心力场是角动量守恒的前提条件。
+
+### 径向加速度方程
 
 根据链式法则
 
@@ -217,21 +223,21 @@ $$-\frac{1}{r} =C_{6}\sin( \theta +\theta _{0}) +C_{7}$$
 
 定义
 
-$$x=1/r,\ r=1/x$$
+$$u=1/r,\ r=1/u$$
 
 则有
 
-$$\frac{dr}{d\theta } =\frac{dx}{d\theta }\frac{dr}{dx} =-\frac{1}{x^{2}}\frac{dx}{d\theta }$$
+$$\frac{dr}{d\theta } =\frac{du}{d\theta }\frac{dr}{du} =-\frac{1}{u^{2}}\frac{du}{d\theta }$$
 
 轨道微分方程变成
 
-$$\frac{d}{d\theta }\left(\frac{dx}{d\theta }\right) +x-\frac{GM}{C_{1}^{2}} =0$$
+$$\frac{d}{d\theta }\left(\frac{du}{d\theta }\right) +u-\frac{GM}{C_{1}^{2}} =0$$
 
-这就是 比耐公式 https://wuli.wiki/online/Binet.html
+这就是 比耐 Binet 公式 https://wuli.wiki/online/Binet.html
 
 这是 二阶非齐次常系数线性微分方程，有通解
 
-$$\frac{1}{r} =x=C_{3}\cos \theta +C_{4}\sin \theta +\frac{GM}{C_{1}^{2}} = (e\cos (\theta +\theta _{0} )+1)\frac{GMm^{2}}{L^{2}}$$
+$$\frac{1}{r} =u=C_{3}\cos \theta +C_{4}\sin \theta +\frac{GM}{C_{1}^{2}} = (e\cos (\theta +\theta _{0} )+1)\frac{GMm^{2}}{L^{2}}$$
 
 其中 待定系数 $e$ 是偏心率。写成 倒数形式
 
@@ -259,9 +265,9 @@ $$\frac{C_{1}}{r^{2}}\frac{d}{d\theta }\left(\frac{dr}{d\theta }\frac{C_{1}}{r^{
 
 $$\frac{d}{d\theta }\left(\frac{1}{r^{2}}\frac{dr}{d\theta }\right) -\frac{1}{r} +\frac{GM}{C_{1}^{2} r} =0$$
 
-作变量替换，得到
+作 $u=1/r$ 变量替换，得到
 
-$$\frac{d}{d\theta }\left(\frac{dx}{d\theta }\right) +\left( 1-\frac{GMm^{2}}{L^{2}}\right) x=0$$
+$$\frac{d}{d\theta }\left(\frac{du}{d\theta }\right) +\left( 1-\frac{GMm^{2}}{L^{2}}\right) u=0$$
 
 这是二元齐次常系数线性微分方程。
 
@@ -275,7 +281,7 @@ $$1-\frac{GMm^2}{L^{2}}  >0$$
 
 有通解
 
-$$\frac{1}{r} =x=C_{6}\cos\left(\sqrt{1-\frac{GMm^{2}}{L^{2}}} \theta +\theta _{0}\right)$$
+$$\frac{1}{r} =u=C_{6}\cos\left(\sqrt{1-\frac{GMm^{2}}{L^{2}}} \theta +\theta _{0}\right)$$
 
 ### 临界态
 
@@ -285,7 +291,7 @@ $$1-\frac{GMm^2}{L^{2}} =0$$
 
 有通解
 
-$$\frac{1}{r} =x=C_{7} +C_{8} \theta $$
+$$\frac{1}{r} =u=C_{7} +C_{8} \theta $$
 
 是一条螺旋线。当 $C_8>0$  行星旋出。当 $C_8<0$  行星旋进。当 $C_8=0$  行星是不稳定的圆形轨道。
 
@@ -321,7 +327,7 @@ $$r( t) =R_0-\frac{C_{8} L}{m} t$$
 
 有通解
 
-$$\frac{1}{r} =x=C_{7}\exp\left(\sqrt{\frac{GMm^{2}}{L^{2}} -1} \theta \right) +C_{8}\exp\left( -\sqrt{\frac{GMm^{2}}{L^{2}} -1} \theta \right)$$
+$$\frac{1}{r} =u=C_{7}\exp\left(\sqrt{\frac{GMm^{2}}{L^{2}} -1} \theta \right) +C_{8}\exp\left( -\sqrt{\frac{GMm^{2}}{L^{2}} -1} \theta \right)$$
 
 假设 $\theta(t)$ 单调递增。
 
@@ -333,17 +339,17 @@ $$\frac{1}{r} =x=C_{7}\exp\left(\sqrt{\frac{GMm^{2}}{L^{2}} -1} \theta \right) +
 
 ### 总结
 
-| 分类   | 判定  | 3维轨道 | 判定        | 4维轨道      |
-| ------ | ----- | ------- | ----------- | ------------ |
-| 自由态 | $T>V$ | 双曲线  | $L^2>GMm^2$ | 可相交渐近线 |
-| 临界态 | $T=V$ | 抛物线  | $L^2=GMm^2$ | 螺旋         |
-| 束缚态 | $T<V$ | 椭圆    | $L^2<GMm^2$ | 螺旋         |
+| 分类   | 判定  | 3维轨道 | 判定        | 4维轨道            |
+| ------ | ----- | ------- | ----------- | ------------------ |
+| 自由态 | $T>V$ | 双曲线  | $L^2>GMm^2$ | 可相交渐近线       |
+| 临界态 | $T=V$ | 抛物线  | $L^2=GMm^2$ | 螺旋线             |
+| 束缚态 | $T<V$ | 椭圆    | $L^2<GMm^2$ | 首尾在原点的螺旋线 |
 
 ## 2维空间行星轨道
 
 在2维空间，引力随距离的1次方衰减，加速度等式变成
 
-$$\ddot{\mathbf{r}} =-\frac{GMm}{| \mathbf{r}| }\mathbf{r}$$
+$$\ddot{\mathbf{r}} =-\frac{GM}{| \mathbf{r}| }\mathbf{r}$$
 
 类似4维空间，我们直接得到2维空间的轨道微分方程
 
@@ -353,9 +359,9 @@ $$\frac{C_{1}}{r^{2}}\frac{d}{d\theta }\left(\frac{dr}{d\theta }\frac{C_{1}}{r^{
 
 $$\frac{d}{d\theta }\left(\frac{1}{r^{2}}\frac{dr}{d\theta }\right) -\frac{1}{r} +\frac{GM}{C_{1}^{2}} r=0$$
 
-作类似变量替换，得到
+作 $u=1/r$ 变量替换，得到
 
-$$\frac{d}{d\theta }\left(\frac{dx}{d\theta }\right) +x-\frac{GM}{C_{1}^{2} x} =0$$
+$$\frac{d}{d\theta }\left(\frac{du}{d\theta }\right) +u-\frac{GM}{C_{1}^{2} u} =0$$
 
 这不是线性方程，没有解析解。但是知道其引力势场的方程为
 
@@ -466,4 +472,5 @@ https://zhuanlan.zhihu.com/p/1953136636943634732
 https://zhuanlan.zhihu.com/p/136265256 
 
 https://wuli.wiki/online/Binet.html
+
 
