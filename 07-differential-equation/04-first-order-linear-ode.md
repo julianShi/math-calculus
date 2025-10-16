@@ -23,7 +23,7 @@ $$
 
 > 笔者也开发了一个免费的网页计算器，供读者们使用。
 >
-> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator，
+> 读者可以打开网页https://bubbleuniverse.github.io/symbolic/calculator
 >
 > 把下列 LaTeX 源码贴入输入框中
 >
@@ -96,9 +96,11 @@ $$
 ### 通解特解
 
 我们注意到，上式可以展开成
+
 $$
 y = e^{-\int p dx} \int q e^{\int p dx} dx + C_2  e^{-\int p dx}
 $$
+
 其中，加号左侧叫做**特解** particular solution，加号右侧是其次方程的**通解** general solution。这个叠加性还可以推广到高阶齐次方程。
 
 ### 伯努利方程

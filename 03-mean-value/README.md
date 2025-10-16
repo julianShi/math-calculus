@@ -26,7 +26,6 @@ e^{ix} = 1 + i x - \frac{x^{2}}{2} - \frac{i x^{3}}{6} + \frac{x^{4}}{24} + \fra
 $$
 
 可见，
-
 $$
 e^{ix} =\cos x+i\sin x
 $$
