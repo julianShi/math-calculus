@@ -29,16 +29,23 @@ Based on Tongji University's "Advanced Mathematics" 3rd Edition (同济大学《
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Quick Start (Online)
+
+- **Launch Binder**: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/julianShi/math-calculus/HEAD)
+- **Launch with JupyterLab**: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/julianShi/math-calculus/HEAD?urlpath=lab)
+
+### Local Installation
+
+#### Prerequisites
 
 - Python 3.8 or higher
 - Git
 
-### Installation
+#### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/math-calculus.git
+   git clone https://github.com/julianShi/math-calculus.git
    cd math-calculus
    ```
 
@@ -58,6 +65,14 @@ Based on Tongji University's "Advanced Mathematics" 3rd Edition (同济大学《
    ```bash
    jupyter notebook
    ```
+
+#### Alternative: Using Conda
+
+```bash
+conda env create -f environment.yml
+conda activate math-calculus
+jupyter notebook
+```
 
 ### Quick Start
 

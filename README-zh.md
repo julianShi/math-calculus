@@ -37,16 +37,23 @@
 
 ## 🚀 快速开始
 
-### 环境要求
+### 在线使用（推荐）
+
+- **启动Binder**: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/julianShi/math-calculus/HEAD)
+- **启动JupyterLab**: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/julianShi/math-calculus/HEAD?urlpath=lab)
+
+### 本地安装
+
+#### 环境要求
 
 - Python 3.8 或更高版本
 - Git
 
-### 安装步骤
+#### 安装步骤
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/yourusername/math-calculus.git
+   git clone https://github.com/julianShi/math-calculus.git
    cd math-calculus
    ```
 
@@ -66,6 +73,14 @@
    ```bash
    jupyter notebook
    ```
+
+#### 替代方案：使用Conda
+
+```bash
+conda env create -f environment.yml
+conda activate math-calculus
+jupyter notebook
+```
 
 ### 使用指南
 

@@ -1,0 +1,12 @@
+name: math-calculus
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - jupyter
+  - notebook
+  - numpy
+  - scipy
+  - sympy
+  - matplotlib
+  - ipykernel
