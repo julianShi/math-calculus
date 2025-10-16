@@ -37,7 +37,7 @@ $$m\ddot{\mathbf{r}} =\mathbf{F} =-\frac{GMm}{| \mathbf{r}| ^{3}}\mathbf{r}$$
 | ---- | -------------------- | --------------------- |
 | 2    | $-\frac{GMm}{r}$     | $-GMm\ln{r}+C$        |
 | 3    | $-\frac{GMm}{r^{2}}$ | $-\frac{GMm}{r}$      |
-| 4    | $-\frac{GMm}{r^{3}}$ | $-\frac{2GMm}{r^{2}}$ |
+| 4    | $-\frac{GMm}{r^{3}}$ | $-\frac{GMm}{2r^{2}}$ |
 
 在不同维度的空间中，引力随距离的衰减快慢也不一样。这可以由 无源闭合曲面的引力通量为0来推导
 
@@ -472,5 +472,4 @@ https://zhuanlan.zhihu.com/p/1953136636943634732
 https://zhuanlan.zhihu.com/p/136265256 
 
 https://wuli.wiki/online/Binet.html
-
 
