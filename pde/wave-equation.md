@@ -96,3 +96,47 @@ $h( x) =\frac{1}{2} \varphi ( x) +\frac{1}{2a}\int_{x_0}^x \psi ( x) dx+\frac{1}
 
 $u( x,t) =\frac{1}{2} \varphi ( x-at) +\frac{1}{2} \varphi ( x+at) +\frac{1}{2a}\int _{x-at}^{x+at} \psi ( x) dx$
 
+## Mathematica 代码
+
+例1：无外力
+
+```mathematica
+(* Define the wave equation *)
+waveEquation = D[u[x, t], {t, 2}] == c ^ 2 * D[u[x, t], {x, 2}];
+(* Solve the wave equation *)
+generalSolution = DSolve[waveEquation, u[x, t], {x, t}]
+
+(*Initial conditions*)
+ic1=(u[x, t]/.t->0)==Sin[Pi*x];
+ic2=(D[u[x, t],t]/.t->0)==0;
+(*Boundary conditions*)
+ic3=(u[x, t]/.x->0)==0;
+ic4=(u[x, t]/.x->1)==0;
+
+generalSolution2 = DSolve[{waveEquation,ic1,ic2,ic3,ic4},u[x,t],{x,t}]
+(*
+{{u[x,t]->Cos[c \[Pi] t] Sin[\[Pi] x]}}
+*)
+```
+
+$u(x,t)=\cos(\pi c t) \sin(\pi x)$
+
+例2: 周期外力
+
+$f(x,t)=\sin(\pi x)\sin(\pi t)$
+
+```mathematica
+(* Define the wave equation with external periodic force*)
+waveEquation2 = D[u[x, t], {t, 2}] -  D[u[x, t], {x, 2}] == Sin[Pi*x]*Sin[Pi*t];
+(*Initial condition*)
+ic21=(u[x, t]/.t->0)==0;
+
+(* Solve the wave equation *)
+solution2 = DSolve[{waveEquation2,ic21,ic2,ic3,ic4}, u[x, t], {x, t}]
+```
+
+$u(x,t)=\frac{\sin (\pi x)(\sin (\pi t)-\pi t\cos (\pi t))}{2\pi ^{2}}$
+
+可见，因为共振，振幅会越来越大。
+
+https://www.wolframcloud.com/obj/yulinshiapp/Published/pde-wave-equation.nb

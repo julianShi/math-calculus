@@ -66,3 +66,11 @@
 | 第二类 | Neumann（诺伊曼）     | 边界值的法向微商 |
 | 第三类 | Robin（罗宾）         | 线性混合         |
 
+## 例题
+
+Mathematica Nodebook 链接
+
+| 例题         | 链接                                                         |
+| ------------ | ------------------------------------------------------------ |
+| （受迫）振动 | [de-wave-equation.nb](https://www.wolframcloud.com/obj/yulinshiapp/Published/pde-wave-equation.nb) |
+
