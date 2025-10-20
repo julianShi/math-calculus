@@ -33,7 +33,7 @@
 9. **多元函数微分法及其应用** (Multivariable Calculus)
 10. **重积分** (Multiple Integrals)
 11. **曲线积分与曲面积分** (Line and Surface Integrals)
-12. **无穷级数** (Infinite Series) ✅ *已实现*
+12. **无穷级数** (Infinite Series)
 
 ## 🚀 快速开始
 

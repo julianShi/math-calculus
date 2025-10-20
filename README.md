@@ -25,7 +25,7 @@ Based on Tongji University's "Advanced Mathematics" 3rd Edition (同济大学《
 9. **Multivariable Calculus** (多元函数微分法及其应用)
 10. **Multiple Integrals** (重积分)
 11. **Line and Surface Integrals** (曲线积分与曲面积分)
-12. **Infinite Series** (无穷级数) ✅ *Currently implemented*
+12. **Infinite Series** (无穷级数)
 
 ## 🚀 Getting Started
 
@@ -115,7 +115,7 @@ math-calculus/
 
 We welcome contributions from the community! This repository is designed to be collaborative, with opportunities to:
 
-- Implement new chapters (1-11)
+- Implement new chapters
 - Add more sections to existing chapters
 - Improve existing content
 - Translate content between languages
