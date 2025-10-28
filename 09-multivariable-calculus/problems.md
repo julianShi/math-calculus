@@ -20,3 +20,9 @@
  - 设向量函数 $\vec{F}=F_{r}\hat{r}+F_{\theta}\hat{\theta}$ ，散度 $\nabla\cdot\vec{F}=\frac{1}{r}\frac{\partial (rF_{r})}{\partial r}+\frac{1}{r}\frac{\partial F_{\theta}}{\partial \theta}$ 。
  - 旋度 $\nabla\times\vec{F}=(\frac{1}{r}\frac{\partial F_{r}}{\partial \theta}-\frac{\partial F_{\theta}}{\partial r})\hat{z}$ （在二维平面极坐标扩展到三维柱坐标时， $\hat{z}$ 方向分量才有旋度，这里仅考虑二维平面极坐标相关部分）。 
 
+
+
+
+
+
+

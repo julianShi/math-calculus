@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="702" height="143" style="
+        width:202px;
+        height:143px;
+        background: #FFF;
+        fill: none;
+">
+    <svg xmlns="http://www.w3.org/2000/svg" />
+    <svg xmlns="http://www.w3.org/2000/svg" class="role-diagram-draw-area" style="overflow: visible;">
+        <g class="shapes-region" style="stroke: black; fill: none;">
+            <g class="grouped-shape">
+                <g class="arrow-line">
+                    <path class="connection real" stroke-dasharray="" d="  M27,106 L136,106" style="stroke: rgb(0, 0, 0); stroke-width: 1; fill: none; fill-opacity: 1;" />
+                    <g stroke="#000" transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,138,106.00000000000001)" style="stroke: rgb(0, 0, 0); stroke-width: 1;">
+                        <path d=" M10.93,-3.29 Q4.96,-0.45 0,0 Q4.96,0.45 10.93,3.29" />
+                    </g>
+                </g>
+                <g class="arrow-line">
+                    <path class="connection real" stroke-dasharray="" d="  M27,106 L165.21,36.89" style="stroke: rgb(0, 0, 0); stroke-width: 1; fill: none; fill-opacity: 1;" />
+                    <g stroke="#000" transform="matrix(-0.894388560370084,0.4472908484187093,-0.4472908484187093,-0.894388560370084,166.99999999999997,36)" style="stroke: rgb(0, 0, 0); stroke-width: 1;">
+                        <path d=" M10.93,-3.29 Q4.96,-0.45 0,0 Q4.96,0.45 10.93,3.29" />
+                    </g>
+                </g>
+            </g>
+            <g />
+        </g>
+        <g />
+        <g />
+        <g />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="700" height="141" style="width:200px;height:141px;font-family:Asana-Math, Asana;background:#FFF;">
+        <g>
+            <g>
+                <g>
+                    <g transform="matrix(1,0,0,1,81,97.5)">
+                        <path transform="matrix(0.017,0,0,-0.017,0,0)" d="M237 -16C473 -16 572 316 576 504C578 618 546 702 419 702C159 702 72 412 69 199C67 80 101 -16 237 -16ZM401 676C536 676 506 491 485 381L169 381C194 485 272 676 401 676ZM253 13C102 13 147 261 163 349L479 349C454 237 396 13 253 13Z" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="8" fill="rgb(0,0,0)" fill-opacity="1"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g>
+            <g>
+                <g>
+                    <g transform="matrix(1,0,0,1,132,39.5)">
+                        <path transform="matrix(0.017,0,0,-0.017,0,0)" d="M368 365C371 403 376 435 384 476C373 481 369 482 364 482C333 482 302 458 266 407C227 351 188 291 172 256L204 408C208 425 210 438 210 450C210 470 202 482 187 482C166 482 128 461 54 408L26 388L33 368L65 389C93 407 104 412 113 412C123 412 130 403 130 390C130 332 87 126 47 -2L57 -9C72 -4 88 -1 111 4L124 6L150 126C168 209 191 262 235 319C269 363 296 384 318 384C333 384 343 379 354 365Z" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="8" fill="rgb(0,0,0)" fill-opacity="1"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </svg>
+</svg>
