@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
 .venv
 venv
+.DS_Store
